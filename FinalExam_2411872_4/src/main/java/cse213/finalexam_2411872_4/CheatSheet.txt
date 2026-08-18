@@ -1,0 +1,121 @@
+CSE213 Final Exam, Part-1
+Id: 1234567, Name: xxxx
+Spring-26, Sec-1
+--------------------------------------------------------------
+
+STRING:
+========
+Strings can be compared using equals method:
+if( str1.equals(str2) ){...}
+
+To get the char value at the specified index: char ch = str.charAt(5);
+The above statement will return the 6th character from the String str [ index starts from 0 ]
+
+To get the length of a String: int len = str.length();
+The above statement will return the no of characters present in the String str. If len is 6, then the character indices are 0 to 5
+
+To check if a String is empty or blank, use the methods isEmpty() or isBlank() respectively.
+
+str1.equals(str2);
+returns true, if the content of 2 Strings are equal, false otherwise
+
+
+CHECKBOX:
+==========
+checkBoxId.isSelected();
+returns true, if the checkbox is checked, false otherwise
+
+
+COMBOBOX:
+=========
+comboBoxId.vetValue();
+returns the selected item from the ComboBox
+
+comboBoxId.getItems.add(newItem);
+add one item to a ComboBox box
+
+comboBoxId.getItems.addAll(newItem1, newItem2, ...);
+add items to a ComboBox box
+
+
+TABLEVIEW & TABLECOLUMN:
+========================
+TableView<RowType> tableViewId;
+
+TableColumn<RowType, ColumnType> tableColumnId;
+
+tableColumnId.setCellValueFactory(
+    new PropertyValueFactory<SourceClassName,ColumnType>("fieldName")
+);
+
+
+CONVERSION:
+===========
+To convert a String to an integer, use the static method: val = Integer.parseInt(str);
+Similar methods also exist for other numerical primitives data types, e.g. val = Folat.parseFloat(str);
+
+To convert a numeric primitive to a String, use static toString method:
+str = Integer.toString(val);       str2 = Folat.toString(val2);   etc.
+
+parseInt, parseFloat or parseDouble methods may throw NumberFormatException if the given string cannot be converted.
+
+
+FOR-EACH-LOOP:
+==============
+Format: for (TypeOfCollectionElement var: collectionName){ … }
+Example: for(SomeModelClassName s: someList){  s.doSome();  }
+
+
+ARRAYLIST:
+==========
+int no = someList.size();   returns the size of the ArrayList
+
+someList.add(item);  adds the parameter item at the end of the ArrayList
+
+someList.remove(item);   removes the parameter item from the ArrayList
+
+obj = someList.get(i);  gets the item at index i from the ArrayList
+
+someList.clear();   removes all items from the ArrayList
+
+
+LOCALDATE:
+==========
+int year = someDate.getYear();  returns the the year field of LocalDate class
+
+LocalDate someDate = LocalDate.now();  this static method returns the current system date
+
+of(int year, int month, int dayOfMonth): this static method returns a LocalDate instance from a year, month and day
+LocalDate aDate = LocalDate.of(2025,12,21);
+
+isAfter(LocalDate other): checks whether the client-date is after the parameter-date or not & returns a boolean
+if( doj.isAfter(dob) ) System.out.print("DoJ is after the DoB");
+Similarly there are isBefore() & isEqual() methods as well, and works in similar fashion
+
+
+FILE & STREAMS:
+================
+boolean b = fileHandle.exists(); Returns true if the file exists in current foder
+
+someStreamHandle = new FileOutputStream(fileHandle); To create the file with new data
+someStreamHandle = new FileOutputStream(fileHandle,true); To append new data at the end of existing file
+
+someStreamHandle.writeObject(modelClassHandle); writes the parameter object to the bin file
+
+someStreamHandle = new FileOutputStream(fileHandle); To open the file to read content
+
+modelClassHandle = (ModelClassName) someStreamHandle.readObject(); reads an object from bin file and returns it
+
+
+EXCEPTION HANDLING:
+===================
+declare File & ALL stream handles outside try block
+try{
+      // your code related to file handling
+}
+Catch(ExceptionType1 e1){ handling code caused by e1 }
+Catch(ExceptionType2 e2){ handling code caused by e2 }
+Catch(ExceptionTypeN eN){ handling code caused by eN }
+finally{
+      //close all connections here
+}

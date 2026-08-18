@@ -1,0 +1,17 @@
+    @javafx.fxml.FXML
+    public void goToDataProcessingViewButtonOnAction(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader myFxmlLoader = new FXMLLoader(MainApplicationClass.class.getResource("DataProcessingView_yourID.fxml"));
+            Scene nextScene = new Scene(myFxmlLoader.load());
+            Stage nextStage =  new Stage();
+            nextStage.setTitle("Data Processing View");
+            nextStage.setScene(nextScene);
+            nextStage.show();
+        }
+        catch(Exception e){
+            //
+        }
+
+
+    }
